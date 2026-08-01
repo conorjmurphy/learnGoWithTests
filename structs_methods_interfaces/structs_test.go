@@ -13,7 +13,7 @@ func TestPerimeter(t *testing.T) {
 }
 
 func TestArea(t *testing.T) {
-	rectangle := Rectangle{12.0, .0}
+	rectangle := Rectangle{12.0, 10.0}
 	got := Area(rectangle)
 	want := 72.0
 
