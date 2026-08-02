@@ -75,6 +75,15 @@ func TestDelete(t *testing.T) {
 		_, err := dictionary.Search(word)
 		assertError(t, err, ErrNotFound)
 	})
+
+	t.Run("unknown word", func(t *testing.T) {
+		word := "test"
+		dictionary := Dictionary{}
+
+		err := dictionary.Delete(word)
+
+		assertError(t, err, ErrWordDoesNotExist)
+	})
 }
 
 func assertStrings(t testing.TB, got, want string) {
